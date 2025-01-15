@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Course Details</title>
+</head>
+<body>
+  <header>
+    <h1>Course Details</h1>
+  </header>
+
+  <main>
+    <div id="course-detail">
+      <!-- Course details will be populated dynamically -->
+    </div>
+  </main>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const courseId = urlParams.get("id");
+
+    const courses = [
+      { id: 1, title: "JavaScript for Beginners", description: "Learn JavaScript from scratch.", price: "$10" },
+      { id: 2, title: "HTML & CSS Mastery", description: "Build stunning websites.", price: "$15" },
+      { id: 3, title: "React Basics", description: "Understand the basics of React.", price: "$20" },
+    ];
+
+    const course = courses.find(c => c.id == courseId);
+    if (course) {
+      document.getElementById("course-detail").innerHTML = `
+        <h2>${course.title}</h2>
+        <p>${course.description}</p>
+        <p>Price: ${course.price}</p>
+        <button onclick="alert('Enrolled!')">Enroll Now</button>
+      `;
+    } else {
+      document.getElementById("course-detail").innerHTML = "<p>Course not found.</p>";
+    }
+  </script>
+</body>
+</html>

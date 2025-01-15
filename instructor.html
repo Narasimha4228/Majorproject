@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Instructor Dashboard</title>
+</head>
+<body>
+  <header>
+    <h1>Instructor Dashboard</h1>
+    <nav>
+      <a href="index.html">Home</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Add a New Course</h2>
+    <form id="add-course-form">
+      <label for="course-title">Course Title:</label>
+      <input type="text" id="course-title" required>
+
+      <label for="course-description">Description:</label>
+      <textarea id="course-description" rows="4" required></textarea>
+
+      <label for="course-price">Price:</label>
+      <input type="number" id="course-price" required>
+
+      <button type="submit">Add Course</button>
+    </form>
+
+    <h2>My Courses</h2>
+    <div id="my-courses">
+      <!-- Instructor's courses will be displayed here -->
+    </div>
+  </main>
+
+  <script src="scripts/main.js"></script>
+</body>
+</html>
